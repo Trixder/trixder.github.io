@@ -26,7 +26,12 @@ function Mine() {
 function Destroy() {
     let from = null;
     for (i = 0; i < placedBuildings.length; i++) {
-        if (placedBuildings[i][1] <= 0) {
+        if (placedBuildings[i][1] <= 0 && placedBuildings[i][2] == 2 && placedBuildings[i][3] > 1) {
+            placedBuildings[i][1] = 50 * placedBuildings[i][3];
+            placedBuildings[i][3]--;
+            placedBuildings[i][0].texture = swordTexture[placedBuildings[i][3]];
+            placedBuildings[i][4] -= 0.25;
+        } else if (placedBuildings[i][1] <= 0) {
             placedBuildings[i][0].destroy();
             from = i;
         }

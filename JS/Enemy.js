@@ -42,8 +42,11 @@ let attacking;
 
 function EnemyCheckCol() {
     attacking = new Array();
+    let attackExtend = 0;
     for (i = 0; i < enemyArr.length; i++){
-        if (Player.x >= enemyArr[i][0].x) {
+        if (buttonsBuildExtra[1].visible) attackExtend = blockSize;
+            
+        if (Player.x >= enemyArr[i][0].x - attackExtend) {
             playerHP -= 0.01;
             enemyArr[i][1] = true;
             continue;
@@ -62,7 +65,7 @@ function EnemyCheckCol() {
 
 function Attacking() {
     for(i = 0; i < attacking.length; i++) {
-        if (placedBuildings[attacking[i][1]][2] == 2) enemyArr[attacking[i][0]][2] -= time / 10 * placedBuildings[i][4];
+        if (placedBuildings[attacking[i][1]][2] == 2) enemyArr[attacking[i][0]][2] -= time / 10 * placedBuildings[attacking[i][1]][4];
         placedBuildings[attacking[i][1]][1] -= time / 10;
     }
 }
