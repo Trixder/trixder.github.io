@@ -101,7 +101,7 @@ function NewWave() {
     if (!spawning && enemyArr.length == 0 && enemies == 0) {
         wave++;
         spawning = true;
-        if (wave == 156) wave = 0; waveSet += 1;
+        if (wave == 156) { wave = 0; waveSet += 1; }
         enemies = (waveSet * 155) + Math.round(Math.tan(wave / 100) * 100);
     }
 }
