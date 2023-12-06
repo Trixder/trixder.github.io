@@ -57,6 +57,8 @@ window.onload = function() {
     app.ticker.add((delta) => {
         time = delta;
 
+        if (coins <= 0 && PlaceBuilding.length == 0) coins = 175;
+
         PlayerMovement(delta);
 
         UpdateBuildings();
