@@ -4,6 +4,7 @@ function MapGen() {
     moneyText = new PIXI.Text(coins, new PIXI.TextStyle({ fontSize: blockSize / 3,
                                                           fill: ['#ffffff'], }));
     costText = new PIXI.Text(25, new PIXI.TextStyle({ fontSize: blockSize / 3 }));
+    costUpgradeText = new PIXI.Text(25, new PIXI.TextStyle({ fontSize: blockSize / 3 }));
     
     moneyText.x = blockSize / 2;
     moneyText.y = app.screen.height - blockSize * 2 - 2.5;
@@ -11,9 +12,13 @@ function MapGen() {
     costText.x = app.screen.width / 2 - blockSize / 6;
     costText.y = blockSize * 2 - blockSize / 2;
 
+    costUpgradeText.x = app.screen.width / 2 + blockSize + blockSize / 4;
+    costUpgradeText.y = blockSize * 2 - blockSize / 2;
+
     CreateButtons();
 
     costText.visible = false;
+    costUpgradeText.visible = false;
     for (i = 0; i < buttonsBuild.length; i++) buttonsBuild[i].visible = false;
     for (i = 0; i < buttonsBuildExtra.length; i++) buttonsBuildExtra[i].visible = false;
 
@@ -34,8 +39,8 @@ function MapGen() {
 
     Rocks();
 
-    for (i = 0; i < buildingsDir.length; i++){
-        let building = PlaceSprite("./IMG/" + buildingsDir[i], Player.x - Player.width / 2 + blockSize, Player.y - blockSize / 2, blockSize, blockSize, -1, 0);
+    for (i = 0; i < textures.length; i++){
+        let building = PlaceSprite(textures[i][0], Player.x - Player.width / 2 + blockSize, Player.y - blockSize / 2, blockSize, blockSize, -1, 0);
         buildings.push(building);
         selectedBuilding = building;
         building.visible = false;
@@ -53,10 +58,10 @@ function CreateButtons(){
     CreateButton("./IMG/BlueprintButton.png", screenWidth + blockSize / 4, app.screen.height - blockSize - blockSize / 4, blockSize, blockSize, -1, buttons, PlacePreview);
     CreateButton("./IMG/WaveButton.png", screenWidth + blockSize * 1.75, app.screen.height - blockSize - blockSize / 4, blockSize, blockSize, -1, buttons, NewWave);
 
-    CreateButton("./IMG/" + buildingsDir[0], screenWidth - blockSize * 1.75 - blockSize - 4, blockSize / 4, blockSize, blockSize, -1, buttonsBuild, SelectBow);
-    CreateButton("./IMG/" + buildingsDir[1], screenWidth - blockSize - blockSize / 4, blockSize / 4, blockSize, blockSize, -1, buttonsBuild, SelectSword);
-    CreateButton("./IMG/" + buildingsDir[2], screenWidth + blockSize / 4, blockSize / 4, blockSize, blockSize, -1, buttonsBuild, SelectShield);
-    CreateButton("./IMG/" + buildingsDir[3], screenWidth + blockSize * 1.75, blockSize / 4, blockSize, blockSize, -1, buttonsBuild, SelectCoin);
+    CreateButton(bowTexture[0], screenWidth - blockSize * 1.75 - blockSize - 4, blockSize / 4, blockSize, blockSize, -1, buttonsBuild, SelectBow);
+    CreateButton(swordTexture[0], screenWidth - blockSize - blockSize / 4, blockSize / 4, blockSize, blockSize, -1, buttonsBuild, SelectSword);
+    CreateButton(shieldTexture[0], screenWidth + blockSize / 4, blockSize / 4, blockSize, blockSize, -1, buttonsBuild, SelectShield);
+    CreateButton(mineTexture[0], screenWidth + blockSize * 1.75, blockSize / 4, blockSize, blockSize, -1, buttonsBuild, SelectCoin);
 
     CreateButton("./IMG/UpgradeButton.png", Player.x - Player.width + blockSize * 2, blockSize * 2, blockSize, blockSize, -1, buttonsBuildExtra, Upgrade);
     CreateButton("./IMG/DeleteButton.png", Player.x - Player.width - blockSize, blockSize * 2, blockSize, blockSize, -1, buttonsBuildExtra, DestroyBuild);

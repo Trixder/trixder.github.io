@@ -41,7 +41,6 @@ let buttonsBuild = new Array();
 let buttonsBuildExtra = new Array();
 
     /*<-For buildings->*/
-let buildingsDir = ["bow.png", "sword.png", "shield.png", "coin.png"];
 let buildings = new Array();
 let placedBuildings = new Array();
 
@@ -51,6 +50,7 @@ let buildHere;
 let bowRange = blockSize * 6;
 let castle;
 
+let costUpgradeText;
 let costText;
 let cost;
 

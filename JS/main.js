@@ -7,7 +7,10 @@ window.onload = function() {
     app = new PIXI.Application({ background: '#232d3f', resizeTo: window });
     document.body.appendChild(app.view);
 
+    Textures();
+
     while (app.screen.width < 8 * blockSize) blockSize -= 10;
+    while (app.screen.height < 6 * blockSize) blockSize -= 10;
 
     Filter = PIXI.Sprite.from('./IMG/Filter.png');
     Filter.height = app.screen.height;
@@ -42,6 +45,7 @@ window.onload = function() {
     for (i = 0; i < buttons.length; i++) app.stage.addChild(buttons[i]);
     for (i = 0; i < buttonsBuild.length; i++) app.stage.addChild(buttonsBuild[i]);
     app.stage.addChild(costText);
+    app.stage.addChild(costUpgradeText);
     for (i = 0; i < buttonsBuildExtra.length; i++) app.stage.addChild(buttonsBuildExtra[i]);
 
     //Detects key press
@@ -81,6 +85,9 @@ function UpdateUI(){
 
     if (coins < cost) costText.style.fill = "0xff0000";
     else costText.style.fill = "0x000000";
+
+    if (coins < costUpgradeText.text) costUpgradeText.style.fill = "0xff0000";
+    else costUpgradeText.style.fill = "0x000000";
 
     sliderHp.scale.x = playerHP;
 }
