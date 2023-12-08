@@ -1,5 +1,5 @@
 //Calculate what should move in response to key press of A or D
-function PlayerMovement(delta) {
+function PlayerMovement() {
     //Variables
     let borderL = false;
     let borderR = false;
@@ -16,7 +16,7 @@ function PlayerMovement(delta) {
     //Checks if there is input after that move sprites
     if (held_directionsX[0]) {
         //Speed at which player moves
-        let speed = delta * 4;
+        let speed = time * 4;
 
         //Moves player to left or calls fakeCamera()
         if (held_directionsX[0] === directionsX.left && !borderL) fakeCamera(speed, 1);

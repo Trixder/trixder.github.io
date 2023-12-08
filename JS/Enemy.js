@@ -19,11 +19,11 @@ function spawnEnemy() {
     enemy.addChild(enemySliderHp);
 }
 
-function Enemy(delta) {
+function Enemy() {
     UpdateEnemyHp();
     EnemyCheckCol();
     Attacking();
-    EnemyMove(delta);
+    EnemyMove();
     Death();
 }
 
@@ -32,8 +32,8 @@ function UpdateEnemyHp() {
     for (i = 0; i < enemyArr.length; i++) enemyArr[i][3].scale.x = 0.1391304347826087 / (100 / enemyArr[i][2]);
 }
 
-function EnemyMove(delta) {
-    for (i = 0; i < enemyArr.length; i++) if (!enemyArr[i][1]) enemyArr[i][0].x -= delta * 20;
+function EnemyMove() {
+    for (i = 0; i < enemyArr.length; i++) if (!enemyArr[i][1]) enemyArr[i][0].x -= time * 20;
 }
 
 

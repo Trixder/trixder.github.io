@@ -263,7 +263,7 @@ function CreateButton(dir, placeX, placeY, width, height, spec, saveToArr, funct
 
                 /*<---Layers--->*/
 //Places the actual sprites in the canvas
-function AddToStage(){
+function AddToStage() {
             /*<--BackLayers-->*/
     for (i = 0; i < backLayer.length; i++) app.stage.addChild(backLayer[i]);
     for (i = 0; i < rockRockLayer.length; i++) app.stage.addChild(rockRockLayer[i]);

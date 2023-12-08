@@ -77,7 +77,7 @@ window.onload = function() {
 
         if (playerHP <= 0){
             app.ticker.stop();
-            location.reload();
+            window.location.href = ("./deathScreen.html?" + (wave - 1));
         }
     });
 }

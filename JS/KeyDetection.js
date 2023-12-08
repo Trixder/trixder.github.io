@@ -24,7 +24,7 @@ function KeyDetectionStart() {
     document.addEventListener("keydown", (e) => {
         let dir = keysX[e.which];
 
-        if (dir && held_directionsX.indexOf(dir) === -1)held_directionsX.unshift(dir);
+        if (dir && held_directionsX.indexOf(dir) === -1) held_directionsX.unshift(dir);
     });
     
     //Removes key input from array
