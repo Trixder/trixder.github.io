@@ -1,8 +1,7 @@
 let enemyHp = 100;
 
 function spawnEnemy() {
-    let enemy = PlaceSprite("./IMG/Enemy.png", farrestRight, Player.y - blockSize / 2, blockSize, blockSize, 0, 0);
-
+    let enemy = PlaceSprite("./IMG/Enemy_" + Math.round(Math.random() * 1) + ".png", farrestRight, Player.y - blockSize / 2, blockSize, blockSize, 0, 0);
     let enemySliderHp = new PIXI.Graphics()
         .beginFill(0xff0000)
         .drawRect(0, 0, blockSize, blockSize / 16);

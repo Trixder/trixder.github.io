@@ -18,7 +18,7 @@ function Bow() {
 function Mine() {
     if (enemies != 0 || enemyArr.length != 0){
         for (i = 0; i < placedBuildings.length; i++) {
-            if (placedBuildings[i][2] == 4) coins += (time / 8) * placedBuildings[i][4];
+            if (placedBuildings[i][2] == 4) coins += (time / 16) * placedBuildings[i][4];
         }
     }
 }
