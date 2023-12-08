@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Death</title>
+    <style>
+        * {
+            margin: 1vh;
+        }
+    </style>
     <script>
     window.onload = function() {
-        document.getElementById('Score').innerHTML = "Vaše skóre: " + window.location.href.slice(window.location.href.indexOf("?") + 1, window.location.href.length);
+        //Pulls score from the adress
+        document.getElementById('Score').innerHTML = "Your score: " + window.location.href.slice(window.location.href.indexOf("?") + 1, window.location.href.length);
     }
     </script>
 </head>
-<body style="display: flex; flex-direction: column; align-items: center; transform: translateY(25vh); background-color: #232d3f;">
+<body style="display: flex; flex-direction: column; align-items: center; transform: translateY(15vh); background-color: #232d3f;">
+    <h1 style="font-size: 10vh; font-family: 'Courier New', Courier, monospace;">You're dead.</h1>
     <h1 id="Score" style="font-family: 'Courier New', Courier, monospace;"></h1>
         <a href="./index.html"><img src="./IMG/retry.png" style="width: 25vh; height: 25vh; image-rendering: pixelated;"></a>
 </body>
