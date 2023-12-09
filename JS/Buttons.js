@@ -22,24 +22,24 @@ function SelectBow() {
 function SelectSword() {
     PlacePreview();
     selectedBuilding = buildings[1];
-    cost = 50;
-    costText.text = 50;
+    cost = 75;
+    costText.text = 75;
     PlacePreview();
 }
 
 function SelectShield() {
     PlacePreview();
     selectedBuilding = buildings[2];
-    cost = 75;
-    costText.text = 75;
+    cost = 50;
+    costText.text = 50;
     PlacePreview();
 }
 
 function SelectCoin() {
     PlacePreview();
     selectedBuilding = buildings[3];
-    cost = 25;
-    costText.text = 25;
+    cost = 50;
+    costText.text = 50;
     PlacePreview();
 }
 
@@ -54,8 +54,8 @@ function Upgrade() {
             }
             break;
         case 2:
-            if (coins >= (100 * placedBuildings[nearBuilding][3]) && placedBuildings[nearBuilding][3] < 5) {
-                coins -= (100 * placedBuildings[nearBuilding][3]);
+            if (coins >= (125 * placedBuildings[nearBuilding][3]) && placedBuildings[nearBuilding][3] < 5) {
+                coins -= (125 * placedBuildings[nearBuilding][3]);
                 placedBuildings[nearBuilding][3]++;
                 placedBuildings[nearBuilding][0].texture = swordTexture[placedBuildings[nearBuilding][3]];
                 placedBuildings[nearBuilding][4] += 0.25;
@@ -128,22 +128,22 @@ function PlaceBuilding() {
                 }
                 break;
             case (buildings[1]):
-                if (coins >= 50) {
-                    coins -= 50;
+                if (coins >= 75) {
+                    coins -= 75;
                     let sword = app.stage.addChildAt(PlaceSprite(swordTexture[1], Player.x - Player.width / 2 + blockSize, Player.y - blockSize / 2, blockSize, blockSize, -1, 0), buildHere);
                     placedBuildings.push([sword, 250, 2, 1, 1]);
                 }
                 break;
             case (buildings[2]):
-                if (coins >= 75) {
-                    coins -= 75;
+                if (coins >= 50) {
+                    coins -= 50;
                     let shield = app.stage.addChildAt(PlaceSprite(shieldTexture[1], Player.x - Player.width / 2 + blockSize, Player.y - blockSize / 2 - blockSize, blockSize, blockSize * 2, -1, 0), buildHere);
                     placedBuildings.push([shield, 500, 3]);
                 }
                 break;
             case (buildings[3]):
-                if (coins >= 25) {
-                    coins -= 25;
+                if (coins >= 50) {
+                    coins -= 50;
                     let coin = app.stage.addChildAt(PlaceSprite(mineTexture[1], Player.x - Player.width / 2 + blockSize, Player.y - blockSize / 2, blockSize, blockSize, -1, 0), buildHere);
                     placedBuildings.push([coin, 50, 4, 1, 1]);
                 }

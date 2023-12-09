@@ -3,7 +3,7 @@ function MapGen() {
     //Money
     moneyText = new PIXI.Text(coins, new PIXI.TextStyle({ fontSize: blockSize / 3,
                                                           fill: ['#ffffff'], }));
-    costText = new PIXI.Text(25, new PIXI.TextStyle({ fontSize: blockSize / 3 }));
+    costText = new PIXI.Text(50, new PIXI.TextStyle({ fontSize: blockSize / 3 }));
     costUpgradeText = new PIXI.Text(25, new PIXI.TextStyle({ fontSize: blockSize / 3 }));
     
     moneyText.x = blockSize / 2;
