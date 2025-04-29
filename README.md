@@ -4,7 +4,7 @@ This is a 2D browser-based game developed as part of a school project using [Pix
 
 ## Overview
 
-In this side-view action game, the player defends against continuous waves of enemies. Each wave increases in difficulty. The objective is to survive as long as possible and achieve a high score.
+In this side-view game, the player defends against continuous waves of enemies. Each wave increases in difficulty. The objective is to survive as long as possible and achieve a high score.
 
 ## Buildings
 
